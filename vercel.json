@@ -8,12 +8,20 @@
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
+            "src": "/app/(.*)",
             "dest": "/api/api.py"
         },
         {
             "src": "/(.*)",
             "dest": "/public/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "status": 200,
+            "headers": {
+                "Content-Type": "image/x-icon"
+            },
+            "dest": "/public/favicon.ico"
         }
     ]
 }
