@@ -41,11 +41,11 @@ def index():
             filename = secure_filename(image_file.filename)
             filename = f"{int(time.time())}_{filename}"  # Add timestamp to make filename unique
             
-            # Check if the 'static' folder exists, create it if missing
-            if not os.path.exists('static'):
-                os.makedirs('static')
+            # Check if the 'public' folder exists, create it if missing
+            if not os.path.exists('public'):
+                os.makedirs('public')
             
-            img_path = os.path.join('static', filename)
+            img_path = os.path.join('public', filename)
             print(f"Saving file to: {img_path}")
 
             try:
@@ -63,6 +63,4 @@ def index():
         
         return response
     
-  
-
-
+    return render_template('index.html')
